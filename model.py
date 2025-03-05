@@ -20,7 +20,7 @@ le_name = LabelEncoder()
 df['name_encoded'] = le_name.fit_transform(df['name'])
 
 # Fill missing description values with 0
-df['description'].fillna(0, inplace=True)
+df['description'].fillna(0)
 
 # Clustering for filtering relevant contexts per country
 kmeans = KMeans(n_clusters=min(len(df['context'].unique()), 10), random_state=42, n_init=10)
